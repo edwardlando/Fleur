@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A2093" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExploreViewController">
+            <connections>
+                <outlet property="_collectionView" destination="TSS-W8-Ig7" id="ZQ9-Rz-Qq5"/>
+                <outlet property="navBar" destination="pyk-nd-Vmf" id="QhV-OU-rN8"/>
+                <outlet property="suggestedUsers" destination="AG1-sD-8tG" id="PM3-Ru-C7a"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-nd-Vmf">
+                    <rect key="frame" x="0.0" y="27" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" red="0.99607849120000003" green="0.59607845540000004" blue="0.29803922770000002" alpha="1" colorSpace="deviceRGB"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="Explore" id="PHN-2m-YXC">
+                            <barButtonItem key="leftBarButtonItem" title="Close" id="Z5b-Ok-8MZ">
+                                <color key="tintColor" red="0.99607849120000003" green="0.59607845540000004" blue="0.29803922770000002" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="back:" destination="-1" id="pWf-DN-m8Q"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Suggested Users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AG1-sD-8tG">
+                    <rect key="frame" x="11" y="80" width="309" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbj-qR-iij">
+                    <rect key="frame" x="10" y="109" width="310" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.79215693473815918" green="0.79215693473815918" blue="0.79215693473815918" alpha="0.48999999999999999" colorSpace="deviceRGB"/>
+                </view>
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TSS-W8-Ig7">
+                    <rect key="frame" x="0.0" y="118" width="320" height="154"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.79215693473815918" green="0.79215693473815918" blue="0.79215693473815918" alpha="0.0" colorSpace="deviceRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="100" minimumInteritemSpacing="13" id="56Y-kV-qUo">
+                        <size key="itemSize" width="60" height="60"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="11" minY="5" maxX="8" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8vx-Oy-Ll7"/>
+                        <outlet property="delegate" destination="-1" id="F8r-IW-uoT"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

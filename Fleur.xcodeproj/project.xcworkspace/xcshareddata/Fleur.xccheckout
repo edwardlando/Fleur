@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CF294AAD-F3C7-4CCE-A9DD-5BFA879216FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Fleur</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B16DA0D0-29D6-4BEF-81F6-DAEF0BD545CA</key>
+		<string>https://github.com/ReedR95/Fleur.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Fleur.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B16DA0D0-29D6-4BEF-81F6-DAEF0BD545CA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ReedR95/Fleur.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B16DA0D0-29D6-4BEF-81F6-DAEF0BD545CA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B16DA0D0-29D6-4BEF-81F6-DAEF0BD545CA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FleurGit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
