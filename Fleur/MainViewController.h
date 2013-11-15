@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UINavigationBar *nav;
 @property (strong, nonatomic) IBOutlet UILabel *companyLabel;
 @property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *nextItems;
 @property (nonatomic, assign) int itemIndex;
 @property (nonatomic) bool firstLoad;
 

@@ -59,7 +59,7 @@
         [labelBG setAlpha:0.5];
         [self addSubview:labelBG];
         
-        self.itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, frame.size.height - 48, frame.size.width, 50)];
+        self.itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, frame.size.height - 48, frame.size.width - 20, 50)];
         itemLabel.text = item.itemTitle;
         itemLabel.font = [UIFont fontWithName:@"NexaLight" size:20];
         itemLabel.textAlignment = NSTextAlignmentLeft;

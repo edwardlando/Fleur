@@ -31,11 +31,8 @@
 @synthesize nav;
 @synthesize companyLabel;
 @synthesize items;
+@synthesize nextItems;
 @synthesize delegate;
-
-
-
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -55,14 +52,13 @@
 {
     [super viewDidLoad];
     
-    _firstLoad = TRUE;
+    nextItems = [[NSMutableArray alloc] initWithCapacity:15];
     
     companyLabel.font = [UIFont fontWithName:@"Nexa Light" size:18];
     companyLabel.textColor = [UIColor colorWithRed:145.0/255.0 green:145.0/255.0 blue:145.0/255.0 alpha:1.0];
 
     companyLabel.text = @"@NikeUSA";
-    
-    
+
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -80,8 +76,6 @@
     [button setBackgroundImage:background forState:UIControlStateNormal];
     [button setBackgroundImage:background forState:UIControlStateSelected];
     button.frame = CGRectMake(0,0,22,11);
-    
-    
     
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -119,9 +113,6 @@
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:followString delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Follow", @"See Profile", nil];
 
     [action showInView:self.parentViewController.view];
-    
-    
-    
 }
 
 
@@ -140,11 +131,11 @@
     _bottomCard.imageView.image = _bottomCard.item.imageView.image;
     [_bottomCard.itemLabel setText:_bottomCard.item.itemTitle];
     
-    if (!_firstLoad && _itemIndex == 14) {
+    if (_itemIndex == 4) {
         [self loadMoreItems];
-        _firstLoad = FALSE;
-    } else if (_itemIndex == 10) {
-        [self loadMoreItems];
+    } else if (_itemIndex == 14) {
+        items = nextItems;
+        _itemIndex = 0;
     }
 }
 
@@ -198,16 +189,12 @@
         
             UIApplication *app = [UIApplication sharedApplication];
             app.networkActivityIndicatorVisible = NO;
-
-        
         }
         
         _topCard = [[DraggableView alloc] initWithFrame:frame item:items[0]];
         [_topCard setParent:self];
         _bottomCard = [[DraggableView alloc] initWithFrame:frame item:items[1]];
         [_bottomCard setParent:self];
-        
-        
         
         [self.view addSubview:_bottomCard];
         [self.view addSubview:_topCard];
@@ -230,26 +217,11 @@
 
 -(void)loadMoreItems {
     
-    _itemIndex = 0;
-    Item *i0 = items[10];
-    Item *i1 = items[11];
-    Item *i2 = items[12];
-    Item *i3 = items[13];
-    Item *i4 = items[14];
-    
-    [items removeAllObjects];
-    
-    [items addObject:i0];
-    [items addObject:i1];
-    [items addObject:i2];
-    [items addObject:i3];
-    [items addObject:i4];
-    
     UIApplication *app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = YES;
     
     CGRect frame = CGRectMake(160-145, 90, 290, 247);
-    items = [[NSMutableArray alloc] initWithCapacity:30];
+    [nextItems removeAllObjects];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{ @"user_token": [defaults objectForKey:@"token"] };
@@ -265,7 +237,7 @@
             [item setItemTitle:itemData[@"name"]];
             [item setItemId:itemData[@"id"]];
             
-            [items addObject:item];
+            [nextItems addObject:item];
             
             UIApplication *app = [UIApplication sharedApplication];
             app.networkActivityIndicatorVisible = NO;
@@ -296,7 +268,6 @@
 -(void)viewDidAppear:(BOOL)animated {
     
     [self loadItems];
-    
 }
 
 
